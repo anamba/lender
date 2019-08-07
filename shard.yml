@@ -4,7 +4,7 @@ version: 0.2.0
 authors:
   - Aaron Namba <aaron@aaronnamba.com>
 
-crystal: 0.29.0
+crystal: 0.30.0
 
 license: Apache-2.0
 
