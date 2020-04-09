@@ -15,7 +15,7 @@
 require "liquid"
 
 module Lender
-  VERSION = "0.1.0"
+  VERSION = "0.3.0"
 
   # For frameworks, where lender_context and lender_base_path will typically be preset
   # by controllers, we define macros, to avoid the need for the extra arguments.
@@ -40,8 +40,7 @@ module Lender
 
   def lender_file(path : String, ctx : Liquid::Context, base_path : String = ".") : String
     unless (viewpath = File.join(base_path, path)) && File.exists?(viewpath)
-      ex = Errno.new("File '#{path}' not found in base path '#{base_path}'")
-      # ex.value = Errno::ENOENT
+      ex = File::NotFoundError.new("File '#{path}' not found in base path '#{base_path}'", file: path)
       raise ex
     end
 
