@@ -15,7 +15,7 @@
 require "liquid"
 
 module Lender
-  VERSION = "0.3.0"
+  VERSION = "0.3.1"
 
   # For frameworks, where lender_context and lender_base_path will typically be preset
   # by controllers, we define macros, to avoid the need for the extra arguments.
